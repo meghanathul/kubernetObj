@@ -10,13 +10,23 @@ There are five types of Object model:
 # namespace:
 In Kubernetes, namespaces provides a mechanism for isolating groups of resources within a single cluster. Names of resources need to be unique within a namespace, but not across namespaces. Namespace-based scoping is applicable only for namespaced objects and not for cluster-wide objects .
 Namespaces provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces. Namespaces cannot be nested inside one another and each Kubernetes resource can only be in one namespace.
-
+To create namespace :
+kubectl create namespace [namespace-name]
+To check the Namespaces :
+kubectl get namespace
+kubectl get ns
 # pod:
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
 A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers. A Pod's contents are always co-located and co-scheduled, and run in a shared context. A Pod models an application-specific "logical host": it contains one or more application containers which are relatively tightly coupled. In non-cloud contexts, applications executed on the same physical or virtual machine are analogous to cloud applications executed on the same logical host.
 
+To check the pods :
+kubectl get pods
+
 # replicaset:
 A ReplicaSet is defined with fields, including a selector that specifies how to identify Pods it can acquire, a number of replicas indicating how many Pods it should be maintaining, and a pod template specifying the data of new Pods it should create to meet the number of replicas criteria. A ReplicaSet then fulfills its purpose by creating and deleting Pods as needed to reach the desired number. When a ReplicaSet needs to create new Pods, it uses its Pod template.
+
+To check replicaset:
+kubectl get rs
 
 # deployement:
 A Deployment provides declarative updates for Pods and ReplicaSets.
